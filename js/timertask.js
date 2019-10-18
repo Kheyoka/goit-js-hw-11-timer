@@ -25,8 +25,8 @@ class CountdownTimer {
 
   startTimer() {
     this.timerId = setInterval(() => {
-      const deltaTime = this.targetDate - Date.now();
-      if (deltaTime === 0) {
+      const deltaTime = Date.now() - this.targetDate;
+      if (deltaTime <= 0) {
         clearInterval(this.timerId);
         refs.days.textContent = 0;
         refs.hours.textContent = 0;
