@@ -25,7 +25,7 @@ class CountdownTimer {
 
   startTimer() {
     this.timerId = setInterval(() => {
-      const deltaTime = Date.now() - this.targetDate;
+      const deltaTime = this.targetDate - Date.now();
       if (deltaTime <= 0) {
         clearInterval(this.timerId);
         refs.days.textContent = 0;
@@ -48,5 +48,5 @@ class CountdownTimer {
 
 new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Jul 17, 2019'),
+  targetDate: new Date('Dec 31, 2019'),
 });
